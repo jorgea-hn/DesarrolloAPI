@@ -45,3 +45,6 @@ CREATE DATABASE fastapi
 
 miramos si hay tablas
 SHOW TABLES;
+
+Para ver las tablas
+DESC users;
