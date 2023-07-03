@@ -34,10 +34,11 @@ async def about():
 
 @app.post("/users")
 async def create_user(user:UserBaseModel):
-     
+    
+    hash_password=User.create_password(user.password)
     user = User.create(
         username=user.username,
-        password=user.password
+        password=hash_password
     )
 
     return user.id
