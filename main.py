@@ -32,7 +32,7 @@ async def index():
 async def about():
     return "About"
 
-@app.post("/users/")
+@app.post("/users")
 async def create_user(user:UserBaseModel):
      
     user = User.create(
