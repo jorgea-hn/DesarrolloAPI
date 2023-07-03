@@ -28,3 +28,20 @@ def startup():
 def shutdown():
     print("El servidor se encuentra finalizando")
 
+
+## Conexion a bases de datos
+Esta es una ORM y permite interactuar con la base de datos
+pip install peewee 
+
+Para conectarnos con el gestor
+pip install mysqlclient
+
+Entramos a la base de datos mysql
+mysql -u root -p
+colocamos la contraseña
+
+creamos la base de datos
+CREATE DATABASE fastapi
+
+miramos si hay tablas
+SHOW TABLES;
