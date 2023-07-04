@@ -1,3 +1,5 @@
+from typing import List
+
 from fastapi import FastAPI
 from fastapi import HTTPException
 from database import User
@@ -71,3 +73,8 @@ async def create_review(user_review:ReviewRequestModel):
 
     return user_review
 
+@app.get('/reviews', response_model=List[ReviewResponseModel])
+async def get_reviews():
+    reviews = UserReview.select() # SELECT * FROM user_reviews:
+
+    return [user_review for user_review in reviews]
