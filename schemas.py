@@ -45,6 +45,13 @@ class ReviewRequestModel(BaseModel):
     review:str
     score:int
 
+    @validator('score')
+    def score_validator(cls,score):
+        if score < 1 or score>5:
+            raise ValueError("El rango para el score es de 1 a 5")
+        
+        return score
+
 class ReviewResponseModel(ResponseModel):
     id:int
     movie_id:int
